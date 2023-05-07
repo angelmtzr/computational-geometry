@@ -1,5 +1,5 @@
 from typing import Protocol, List
-from point import Point
+from geometric import Point
 
 
 class ConvexHullCalculator(Protocol):

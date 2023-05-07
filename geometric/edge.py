@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from point import Point
+from geometric import Point
 
 
-@dataclass
+@dataclass(frozen=True, slots=True)
 class Edge:
     origin: Point
     dest: Point

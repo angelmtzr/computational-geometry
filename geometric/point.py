@@ -10,7 +10,7 @@ class Point(NamedTuple):
         return f"({self.x}, {self.y})"
 
     def is_left_of_line(self, p: Point, q: Point) -> bool:
-        """Check if point r is to the left of a line in the plane."""
+        """Check if the point is to the left of a line in the plane defined by two points."""
         r = self
 
         # Calculate the vectors
