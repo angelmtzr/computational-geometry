@@ -51,7 +51,3 @@ from geometric.convex import ConvexHull
 ## Contributing
 
 Contributions are welcome! If you find any bugs or want to suggest new features, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the terms of the MIT license. See [LICENSE](LICENSE) for more information.
