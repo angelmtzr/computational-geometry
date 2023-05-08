@@ -6,7 +6,7 @@ This repository contains my own computational geometry Python package: [`geometr
 - Line Segment Intersection
 - Polygon/Layer Overlap
 
-The [matplotlib](https://matplotlib.org/) package is used to display geometries.
+The [matplotlib](https://matplotlib.org/) package is used to easily see the outputs of the program in a graphical way.
 
 ## Table of Contents
 
@@ -38,8 +38,8 @@ pip install -r requirements.txt
 
 ## Usage
 
-The `geometric` package contains several subpackages, including:
-- `convex`: contains modules with different algorithms for computing the convex hull of a set of points, as well as a class that facilitates handling and displaying the convex hull.
+The [`geometric`](./geometric) package contains several subpackages and modules, including:
+- [`convex`](./geometric/convex): contains modules with different algorithms for computing the convex hull of a set of points, as well as a class that facilitates handling and displaying the convex hull.
 
 
 To use any of these modules, simply import them in your Python code:
