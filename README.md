@@ -1,22 +1,19 @@
 # computational-geometry
 
-This repository contains my own computational geometry Python package: `geometric`.
-
-## Table of Contents
-
-- [Description](#description)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Description
-
-The `geometric` package covers fundamental algorithms and data structures used in computational geometry, with a focus on practical applications. Topics covered include:
+This repository contains my own computational geometry Python package: [`geometric`](./geometric). It covers fundamental algorithms and data structures, with a focus on practical applications. Topics covered include:
 - 2D Points
 - Convex Hull
 - Line Segment Intersection
 - Polygon/Layer Overlap
+
+The [matplotlib](https://matplotlib.org/) package is used to display geometries.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Getting Started
 
@@ -41,8 +38,8 @@ pip install -r requirements.txt
 
 ## Usage
 
-The `geometric` package contains several subpackages and modules, including:
-- `convex`: a package for computing the convex hull of a set of points.
+The `geometric` package contains several subpackages, including:
+- `convex`: contains modules with different algorithms for computing the convex hull of a set of points, as well as a class that facilitates handling and displaying the convex hull.
 
 
 To use any of these modules, simply import them in your Python code:
