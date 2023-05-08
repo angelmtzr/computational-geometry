@@ -1,4 +1,7 @@
-from .point import Point
-from .edge import Edge
+from .point2d import Point2D
+from .point3d import Point3D
+from .segment import Segment
 
-__all__ = ["Point", "Edge"]
+epsilon = 1e-4
+
+__all__ = [name for name in dir() if not name.startswith("_")]
