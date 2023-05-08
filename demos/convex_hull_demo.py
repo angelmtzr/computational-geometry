@@ -1,8 +1,8 @@
 import random
 from typing import List
 
-from geometric import ConvexHull, SlowConvexHullCalculator
 from geometric import Point2D
+from geometric.convex import ConvexHull, SlowConvexHullCalculator
 
 
 def generate_random_points(*, n: int = 10, lower_limit: int = -100,

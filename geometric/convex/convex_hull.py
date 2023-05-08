@@ -1,8 +1,8 @@
 """
 `ConvexHull` module
 
-This module defines the `ConvexHull` data class, which represents a convex hull of a set of points. Also, there is a display
-method provided in order to show the geometry: it uses matplotlib.
+This module defines the `ConvexHull` data class, which represents a convex hull of a set of points.
+Also, there is a display method provided in order to show the geometry: it uses matplotlib.
 """
 from dataclasses import dataclass
 from typing import List
