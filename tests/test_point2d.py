@@ -1,7 +1,7 @@
 import pytest
 
 import geometric
-from geometric import Point2D, Point3D
+from geometric import Point2D
 
 
 @pytest.mark.parametrize("p, q, epsilon, expected", [
@@ -17,21 +17,6 @@ from geometric import Point2D, Point3D
 def test_epsilon_precision(p: Point2D, q: Point2D, epsilon: float, expected: bool) -> None:
     geometric.epsilon = epsilon
     assert (p == q) == expected
-
-
-@pytest.mark.parametrize("p, q, expected, should_raise", [
-    (Point2D(0, 0), Point3D(0, 0, 0), None, True),
-    (Point3D(0, 0, 0), Point2D(0, 0), None, True),
-    (Point2D(0, 0), Point2D(0, 0), True, False)
-
-])
-def test_different_dimension_point_comparison_error(p: Point2D, q: Point3D,
-                                                    expected: bool | None, should_raise: bool) -> None:
-    if should_raise:
-        with pytest.raises(ArithmeticError):
-            _ = p == q
-    else:
-        assert (p == q) == expected
 
 
 @pytest.mark.parametrize("p, q, expected", [

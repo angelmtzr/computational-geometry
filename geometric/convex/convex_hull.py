@@ -1,65 +1,42 @@
 """
-`ConvexHull` module
+`convex_hull` module
 
-This module defines the `ConvexHull` data class, which represents a convex hull of a set of points.
-Also, there is a display method provided in order to show the geometry: it uses matplotlib.
+This module defines a simple function to display a convex hull using matplotlib.
 """
-from dataclasses import dataclass
 from typing import List
 
 import matplotlib.pyplot as plt
 
-from geometric import Point2D
-from .convex_hull_calculator import ConvexHullCalculator
+from geometric import Point2D as Point
 
 
-@dataclass(slots=True)
-class ConvexHull:
+def display_convex_hull(points: List[Point], convex_hull_vertices: List[Point]) -> None:
     """
-    A data class representing a convex hull of a set of points. It also provides a display method that uses matplotlib.
-
-    Attributes:
-        points (List[Point2D]): A list of `Point2D` representing the points used to calculate the convex hull.
-        vertices (List[Point2D]): A list of `Point2D` representing the vertices of the convex hull.
+    Displays the given points and its convex hull defined by the given vertices,
+    using matplotlib.
+    
+    Args:
+        points: The points.
+        convex_hull_vertices: The convex hull vertices.
     """
-    points: List[Point2D]
-    vertices: List[Point2D]
+    _, ax = plt.subplots()
 
-    def __init__(self, points: List[Point2D], calculator: ConvexHullCalculator) -> None:
-        """
-        Initializes a `ConvexHull` object.
+    plt.style.use('seaborn')
+    plt.title('CONVEX HULL')
 
-        Args:
-            points (List[Point2D]): A list of `Point2D` representing the points used to calculate the convex hull.
-            calculator (ConvexHullCalculator): An object implementing the `ConvexHullCalculator` protocol
-            that calculates the convex hull of the given points.
-        """
-        self.points = points
-        self.vertices = calculator.calculate(points)
+    x, y = zip(*points)
+    ax.scatter(x, y, c="blue", label="Points")
 
-    def display(self) -> None:
-        """
-        Displays this `ConvexHull` using matplotlib.
-        """
+    x, y = zip(*convex_hull_vertices)
+    ax.scatter(x, y, c="green", label="Convex Hull Vertices")
 
-        _, ax = plt.subplots()
+    # We need to add the first vertex at the end to close the convex hull
+    convex_hull_vertices = convex_hull_vertices.copy()
+    convex_hull_vertices.append(convex_hull_vertices[0])
 
-        plt.style.use('seaborn')
-        plt.title('CONVEX HULL')
+    x, y = zip(*convex_hull_vertices)
+    ax.plot(x, y, c="red", label="Convex Hull Edges")
 
-        x, y = zip(*self.points)
-        ax.scatter(x, y, c="blue", label="Points")
-
-        x, y = zip(*self.vertices)
-        ax.scatter(x, y, c="green", label="Convex Hull Vertices")
-
-        # We need to add the first vertex at the end to close the convex hull
-        vertices = self.vertices.copy()
-        vertices.append(vertices[0])
-
-        x, y = zip(*vertices)
-        ax.plot(x, y, c="red", label="Convex Hull Edges")
-
-        ax.legend(loc="lower left", bbox_to_anchor=(0.6, -0.37))
-        plt.subplots_adjust(bottom=0.25)
-        plt.show()
+    ax.legend(loc="lower left", bbox_to_anchor=(0.6, -0.37))
+    plt.subplots_adjust(bottom=0.25)
+    plt.show()

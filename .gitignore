@@ -41,3 +41,4 @@ venv.bak/
 
 # Local ignores
 .DS_Store
+/tests/.pytest_cache/
