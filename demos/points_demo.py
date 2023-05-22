@@ -14,9 +14,6 @@ def points_demo():
     p = Point3D(1, 2, 3)
     q = Point3D(1, 3, 2)
     print(f"Order equality check: {p} == {q} -> {p == q}")  # -> False
-    p = Point2D(0, 0)
-    q = Point3D(0, 0, 0)
-    print(f"Different dimensions check: {p} == {q} -> {p == q}")  # -> ArithmeticError
 
 
 if __name__ == "__main__":
