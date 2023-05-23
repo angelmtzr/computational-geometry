@@ -20,12 +20,12 @@ def generate_random_points(*, n: int = 10, limits: Tuple[int] = (-100, 100),
     """
     if seed is not None:
         random.seed(seed)
-    return [Point(random.randint(*limits),
-                  random.randint(*limits)) for _ in range(n)]
+    return [Point(x=random.randint(*limits), y=random.randint(*limits))
+            for _ in range(n)]
 
 
 def convex_hull_demo():
-    points = generate_random_points(n=50)
+    points = generate_random_points(n=22)
     convex_hull_vertices = slow_convex_hull_calculator(points)
     display_convex_hull(points, convex_hull_vertices)
 

@@ -6,9 +6,8 @@ You can modify it doing the following:
 >>> import geometric
 >>> geometric.epsilon = 1e-9
 """
-from .line import Line
+from .intersection import Segment, Line
 from .points import Point2D, Point3D
-from .segment import Segment
 
 epsilon = 1e-4
 

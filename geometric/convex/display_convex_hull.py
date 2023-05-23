@@ -1,7 +1,5 @@
 """
-`convex_hull` module
-
-This module defines a simple function to display a convex hull using matplotlib.
+The display convex hull module defines a simple function to display a convex hull using matplotlib.
 """
 from typing import List
 
