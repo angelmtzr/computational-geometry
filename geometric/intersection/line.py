@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from points import Point2D
+    from geometric import Point2D
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,10 +30,10 @@ class Line:
         >>> line.p2
         (1, 1)
     """
-    p1: "Point2D"
-    p2: "Point2D"
+    p1: Point2D
+    p2: Point2D
 
-    def __contains__(self, p: "Point2D") -> bool:
+    def __contains__(self, p: Point2D) -> bool:
         """
         Checks if this `Line` contains a given point.
 
@@ -109,6 +109,7 @@ def line_intersect(l1: Line, l2: Line) -> Point2D | None:
     Returns:
        `None` if parallel, the intersection otherwise.
     """
+    from geometric import Point2D
     if lines_are_parallel(l1, l2):
         return None
 
