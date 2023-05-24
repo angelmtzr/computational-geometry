@@ -1,7 +1,7 @@
 import itertools
 from typing import Iterable
 
-from .segment import segment_intersect, Segment
+from geometric.lines.segment import segment_intersect, Segment
 
 
 def brute_force_segment_intersection(segments: Iterable[Segment]):

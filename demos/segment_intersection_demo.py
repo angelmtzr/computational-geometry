@@ -26,7 +26,7 @@ def generate_random_segments(*, n: int = 10, limits: Tuple[int] = (0, 100),
 
 
 def segment_intersection_demo():
-    segments = generate_random_segments(n=20)
+    segments = generate_random_segments(n=10)
     intersections = brute_force_segment_intersection(segments)
     display_segment_intersections(segments, intersections)
 

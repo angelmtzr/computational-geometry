@@ -2,7 +2,8 @@ from random import randint, seed
 
 
 def build_tree(*, dim, data, ndims):
-    if len(data) == 1: return data
+    if len(data) == 1:
+        return data
     datos_s = sorted(data, key=lambda x: x[dim])
     mediana = (len(datos_s) - 1) // 2
     datos_izq = datos_s[:mediana + 1]
@@ -37,7 +38,7 @@ def kdtree_demo():
     kdtree = build_tree(dim=0, data=data, ndims=3)
     rango = ((0, 100), (80, 135), (120, 180))
     print(range_search(kdtree, 0, rango, 3))
-    
+
 
 if __name__ == '__main__':
     kdtree_demo()

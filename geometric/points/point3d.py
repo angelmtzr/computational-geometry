@@ -18,7 +18,7 @@ class Point3D(NamedTuple):
         z: The z coordinate of the point.
 
     Example:
-        >>> from geometric import Point3D
+        >>> from src.geometric import Point3D
         >>> p = Point3D(1, 2, 3)
         >>> p.x
         1
