@@ -20,7 +20,7 @@ class Point2D(NamedTuple):
         y: The y coordinate of the point.
 
     Example:
-        >>> from geometric import Point2D as Point
+        >>> from src.geometric import Point2D as Point
         >>> p = Point(1.0, 2.0)
         >>> p.x
         1.0
